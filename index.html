@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Value Engine | Unlocking Sustainable Growth</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #106B7E;
+            --secondary: #FF6B5B;
+            --accent: #FFAE42;
+            --light: #F8F9FA;
+            --dark: #2D3748;
+            --gray: #A0AEC0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .hero-shape {
+            position: absolute;
+            width: 30vw;
+            max-width: 600px;
+            height: auto;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        
+        .shape-1 {
+            top: 10%;
+            right: -5%;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .shape-2 {
+            bottom: 5%;
+            left: -10%;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .nav-link {
+            position: relative;
+            padding-bottom: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .card {
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .methodology-card {
+            position: relative;
+            padding: 2rem;
+            border-radius: 1rem;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            overflow: visible;
+        }
+        
+        .methodology-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .methodology-number {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .accordion-header {
+            padding: 1.5rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1rem;
+        }
+        
+        .accordion-content.active {
+            max-height: 1000px;
+            padding-bottom: 1.5rem;
+        }
+        
+        .value-engine-graphic {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 75%;
+        }
+        
+        .engine-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary), #0D5669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(16, 107, 126, 0.5);
+            z-index: 10;
+        }
+        
+        .engine-orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px dashed rgba(16, 107, 126, 0.3);
+            border-radius: 50%;
+        }
+        
+        .orbit-1 {
+            width: 250px;
+            height: 250px;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .orbit-2 {
+            width: 350px;
+            height: 350px;
+            animation: rotate 30s linear infinite reverse;
+        }
+        
+        .orbit-3 {
+            width: 450px;
+            height: 450px;
+            animation: rotate 40s linear infinite;
+        }
+        
+        .engine-node {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background: white;
+            color: var(--dark);
+            z-index: 5;
+        }
+        
+        .node-1 {
+            top: 50%;
+            left: calc(50% + 125px);
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #F9F9F9, #FFFFFF);
+        }
+        
+        .node-2 {
+            top: calc(50% - 108px);
+            left: calc(50% - 62px);
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #F9F9F9, #FFFFFF);
+        }
+        
+        .node-3 {
+            top: calc(50% + 108px);
+            left: calc(50% - 62px);
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #F9F9F9, #FFFFFF);
+        }
+        
+        .node-4 {
+            top: calc(50% - 150px);
+            left: calc(50% + 150px);
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #F9F9F9, #FFFFFF);
+        }
+        
+        .node-5 {
+            top: calc(50% + 150px);
+            left: calc(50% + 150px);
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #F9F9F9, #FFFFFF);
+        }
+        
+        .node-6 {
+            top: 50%;
+            left: calc(50% - 225px);
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #F9F9F9, #FFFFFF);
+        }
+        
+        @keyframes rotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: rgba(16, 107, 126, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+            width: 0;
+            transition: width 1s ease;
+        }
+        
+        .diagnostic-question {
+            display: none;
+        }
+        
+        .diagnostic-question.active {
+            display: block;
+        }
+        
+        .template-card {
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .template-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 100;
+            padding: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+            display: block;
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            padding: 1rem 0;
+            font-size: 1.25rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 1024px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-nav-toggle {
+                display: block;
+            }
+            
+            .engine-core {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .orbit-1 {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .orbit-2 {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .orbit-3 {
+                width: 360px;
+                height: 360px;
+            }
+            
+            .engine-node {
+                width: 50px;
+                height: 50px;
+                font-size: 0.75rem;
+            }
+            
+            .node-1 {
+                left: calc(50% + 100px);
+            }
+            
+            .node-2 {
+                top: calc(50% - 86px);
+                left: calc(50% - 50px);
+            }
+            
+            .node-3 {
+                top: calc(50% + 86px);
+                left: calc(50% - 50px);
+            }
+            
+            .node-4 {
+                top: calc(50% - 120px);
+                left: calc(50% + 120px);
+            }
+            
+            .node-5 {
+                top: calc(50% + 120px);
+                left: calc(50% + 120px);
+            }
+            
+            .node-6 {
+                left: calc(50% - 180px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .engine-core {
+                width: 100px;
+                height: 100px;
+                font-size: 0.875rem;
+            }
+            
+            .orbit-1 {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .orbit-2 {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .orbit-3 {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .engine-node {
+                width: 40px;
+                height: 40px;
+                font-size: 0.625rem;
+            }
+            
+            .node-1 {
+                left: calc(50% + 80px);
+            }
+            
+            .node-2 {
+                top: calc(50% - 70px);
+                left: calc(50% - 40px);
+            }
+            
+            .node-3 {
+                top: calc(50% + 70px);
+                left: calc(50% - 40px);
+            }
+            
+            .node-4 {
+                top: calc(50% - 95px);
+                left: calc(50% + 95px);
+            }
+            
+            .node-5 {
+                top: calc(50% + 95px);
+                left: calc(50% + 95px);
+            }
+            
+            .node-6 {
+                left: calc(50% - 140px);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .engine-orbit, .engine-node {
+                display: none;
+            }
+            
+            .engine-core {
+                position: relative;
+                width: 180px;
+                height: 180px;
+                margin: 0 auto;
+                transform: none;
+                top: 0;
+                left: 0;
+            }
+            
+            .value-engine-graphic {
+                height: auto;
+                padding-bottom: 0;
+            }
+        }
+        
+        /* Animation for page sections */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom animations for dashboard visualization */
+        .dashboard-visual {
+            position: relative;
+            height: 300px;
+            background-color: #F8F9FA;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+        .chart-bar {
+            position: absolute;
+            bottom: 0;
+            width: 30px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            border-radius: 4px 4px 0 0;
+            transition: height 1s ease;
+        }
+        
+        .chart-bar-1 {
+            left: 15%;
+            height: 0;
+        }
+        
+        .chart-bar-2 {
+            left: 30%;
+            height: 0;
+        }
+        
+        .chart-bar-3 {
+            left: 45%;
+            height: 0;
+        }
+        
+        .chart-bar-4 {
+            left: 60%;
+            height: 0;
+        }
+        
+        .chart-bar-5 {
+            left: 75%;
+            height: 0;
+        }
+        
+        .dashboard-visual.active .chart-bar-1 {
+            height: 60%;
+        }
+        
+        .dashboard-visual.active .chart-bar-2 {
+            height: 80%;
+        }
+        
+        .dashboard-visual.active .chart-bar-3 {
+            height: 65%;
+        }
+        
+        .dashboard-visual.active .chart-bar-4 {
+            height: 90%;
+        }
+        
+        .dashboard-visual.active .chart-bar-5 {
+            height: 75%;
+        }
+        
+        .ai-visual {
+            position: relative;
+            height: 300px;
+            background-color: #F8F9FA;
+            border-radius: 1rem;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .ai-circle {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(16, 107, 126, 0.5);
+        }
+        
+        .ai-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(16, 107, 126, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        .ai-pulse-2 {
+            animation-delay: 0.5s;
+        }
+        
+        .ai-pulse-3 {
+            animation-delay: 1s;
+        }
+        
+        .ai-connection {
+            position: absolute;
+            background-color: rgba(16, 107, 126, 0.2);
+            height: 2px;
+        }
+        
+        .ai-connection-1 {
+            width: 0;
+            top: 40%;
+            left: 50%;
+            transform-origin: left center;
+            transform: rotate(-30deg);
+            transition: width 1s ease;
+        }
+        
+        .ai-connection-2 {
+            width: 0;
+            top: 60%;
+            left: 50%;
+            transform-origin: left center;
+            transform: rotate(30deg);
+            transition: width 1s ease;
+        }
+        
+        .ai-connection-3 {
+            width: 0;
+            top: 50%;
+            left: 50%;
+            transition: width 1s ease;
+        }
+        
+        .ai-visual.active .ai-connection-1,
+        .ai-visual.active .ai-connection-2,
+        .ai-visual.active .ai-connection-3 {
+            width: 40%;
+        }
+        
+        .ai-node {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .ai-node-1 {
+            top: 40%;
+            right: 20%;
+        }
+        
+        .ai-node-2 {
+            top: 60%;
+            right: 20%;
+        }
+        
+        .ai-node-3 {
+            top: 50%;
+            right: 10%;
+        }
+        
+        .ai-visual.active .ai-node {
+            opacity: 1;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(2.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <span class="text-2xl font-bold text-gray-800">THE<span class="text-primary ml-2" style="color: var(--primary);">VALUE ENGINE</span></span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul class="flex space-x-8">
+                    <li><a href="#what-we-do" class="nav-link font-medium text-gray-700 hover:text-primary">What We Do</a></li>
+                    <li><a href="#who-we-help" class="nav-link font-medium text-gray-700 hover:text-primary">Who We Help</a></li>
+                    <li><a href="#methodology" class="nav-link font-medium text-gray-700 hover:text-primary">Methodology</a></li>
+                    <li><a href="#tools" class="nav-link font-medium text-gray-700 hover:text-primary">Tools & Resources</a></li>
+                    <li><a href="#contact" class="btn-primary">Get Started</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-nav-toggle md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-close">&times;</div>
+        <nav class="mt-8">
+            <a href="#what-we-do" class="mobile-nav-link">What We Do</a>
+            <a href="#who-we-help" class="mobile-nav-link">Who We Help</a>
+            <a href="#methodology" class="mobile-nav-link">Methodology</a>
+            <a href="#tools" class="mobile-nav-link">Tools & Resources</a>
+            <a href="#contact" class="btn-primary block text-center mt-8">Get Started</a>
+        </nav>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                        <span class="block">Built For</span>
+                        <span class="gradient-text">Growth</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        We identify, align, and optimize Value Generation Engines within your business to unlock sustainable growth and operational excellence.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="btn-primary text-center">Schedule a Strategy Call</a>
+                        <a href="#diagnostic" class="btn-secondary text-center">Take Growth Assessment</a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 relative" data-aos="fade-left">
+                    <div class="value-engine-graphic">
+                        <div class="engine-core">
+                            <span>Value Engine</span>
+                        </div>
+                        <div class="engine-orbit orbit-1"></div>
+                        <div class="engine-orbit orbit-2"></div>
+                        <div class="engine-orbit orbit-3"></div>
+                        <div class="engine-node node-1">Strategy</div>
+                        <div class="engine-node node-2">Operations</div>
+                        <div class="engine-node node-3">Market</div>
+                        <div class="engine-node node-4">Technology</div>
+                        <div class="engine-node node-5">Culture</div>
+                        <div class="engine-node node-6">Finance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What We Do Section -->
+    <section id="what-we-do" class="section bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="mb-16 text-center fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What We Do</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We unlock sustainable growth by optimizing your business's Value Generation Engine.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-up" data-delay="100">
+                    <h3 class="text-2xl font-bold mb-4">Value Generation Engines Explained</h3>
+                    <p class="text-gray-600 mb-6">
+                        Every successful business operates with a core system that generates value—we call this your Value Generation Engine (VGE). This system integrates strategy, operations, technology, market positioning, and culture to create sustainable growth.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Most businesses struggle because their VGE has inefficiencies, misalignment, or blind spots that limit performance and scalability.
+                    </p>
+                    <p class="text-gray-600">
+                        We specialize in identifying these critical bottlenecks, realigning your business systems, and optimizing each component to work in harmony—creating exponential rather than incremental growth.
+                    </p>
+                </div>
+                
+                <div class="fade-up" data-delay="200">
+                    <h3 class="text-2xl font-bold mb-4">Core Offerings</h3>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h4 class="font-semibold">Business Alignment & Structuring for Scale</h4>
+                                <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="accordion-content">
+                                <p class="text-gray-600">
+                                    We architect your business structure to ensure all components—from strategy and leadership to operations and culture—are perfectly aligned to support sustainable growth. This creates internal coherence and eliminates friction between different parts of your organization.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h4 class="font-semibold">Operational Efficiency & Process Optimization</h4>
+                                <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="accordion-content">
+                                <p class="text-gray-600">
+                                    We analyze your core business processes, identify bottlenecks, and redesign operations to maximize efficiency and quality. Our approach integrates cutting-edge AI-driven process optimization with proven operational excellence frameworks to create adaptable, resilient systems.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h4 class="font-semibold">Go-to-Market & Positioning Strategy</h4>
+                                <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="accordion-content">
+                                <p class="text-gray-600">
+                                    We help you refine your market positioning, clarify your value proposition, and develop a coherent go-to-market strategy that resonates with your ideal clients. This includes positioning, messaging architecture, channel strategy, and competitive differentiation.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h4 class="font-semibold">Investment Readiness & Strategic Partnerships</h4>
+                                <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="accordion-content">
+                                <p class="text-gray-600">
+                                    We prepare your business for investment, acquisition, or strategic partnerships by strengthening your value drivers, streamlining operations, and developing robust growth projections supported by data. This includes financial modeling, strategic roadmapping, and governance optimization.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h4 class="font-semibold">Embedded Advisory & Execution Support</h4>
+                                <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                            </div>
+                            <div class="accordion-content">
+                                <p class="text-gray-600">
+                                    We don't just recommend changes—we work alongside your team to implement them. Our embedded advisory approach provides ongoing guidance, execution support, and capability building to ensure lasting transformation. We function as partners, not just consultants.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Who We Help Section -->
+    <section id="who-we-help" class="section">
+        <div class="container mx-auto px-4">
+            <div class="mb-16 text-center fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Who We Help</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We work with businesses at critical inflection points where optimized systems and strategic clarity create exponential value.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card p-8 fade-up" data-delay="100">
+                    <div class="mb-6 text-5xl text-primary" style="color: var(--primary)">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Scaling Founders</h3>
+                    <p class="text-gray-600 mb-4">
+                        Founders facing the challenges of scaling from startup to structured organization. Typically $1-10M revenue companies hitting growth constraints.
+                    </p>
+                    <p class="text-gray-700 font-medium">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        From chaotic growth to systematic scale
+                    </p>
+                </div>
+                
+                <div class="card p-8 fade-up" data-delay="200">
+                    <div class="mb-6 text-5xl text-primary" style="color: var(--primary)">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Established Businesses</h3>
+                    <p class="text-gray-600 mb-4">
+                        Leaders of established businesses entering new markets or facing stagnation. Companies with solid foundations seeking renewed growth trajectories.
+                    </p>
+                    <p class="text-gray-700 font-medium">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        From plateau to renewed momentum
+                    </p>
+                </div>
+                
+                <div class="card p-8 fade-up" data-delay="300">
+                    <div class="mb-6 text-5xl text-primary" style="color: var(--primary)">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Professional Services</h3>
+                    <p class="text-gray-600 mb-4">
+                        Accounting, legal, and consulting firms facing internal inefficiencies or seeking to transform their service delivery models and scale.
+                    </p>
+                    <p class="text-gray-700 font-medium">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        From service provider to scalable advisory
+                    </p>
+                </div>
+                
+                <div class="card p-8 fade-up" data-delay="400">
+                    <div class="mb-6 text-5xl text-primary" style="color: var(--primary)">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Investors & Operators</h3>
+                    <p class="text-gray-600 mb-4">
+                        Private equity, venture capital, and operators looking to systematize portfolio companies and accelerate value creation.
+                    </p>
+                    <p class="text-gray-700 font-medium">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        From potential to optimized value
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center fade-up">
+                <a href="#contact" class="btn-primary">Discuss Your Specific Needs</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Methodology Section -->
+    <section id="methodology" class="section bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="mb-16 text-center fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Methodology</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We take a systematic, partnership-based approach to business transformation.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="methodology-card fade-up" data-delay="100">
+                    <div class="methodology-number">1</div>
+                    <h3 class="text-xl font-bold mb-4 mt-4">Diagnose</h3>
+                    <p class="text-gray-600">
+                        We conduct a comprehensive analysis of your current Value Generation Engine, identifying strengths, bottlenecks, and optimization opportunities. This includes operational assessment, market positioning analysis, and strategic clarity evaluation.
+                    </p>
+                </div>
+                
+                <div class="methodology-card fade-up" data-delay="200">
+                    <div class="methodology-number">2</div>
+                    <h3 class="text-xl font-bold mb-4 mt-4">Design</h3>
+                    <p class="text-gray-600">
+                        We co-create a custom optimization roadmap that aligns all components of your business system toward your strategic objectives. This includes process refinement, structural alignment, and capability development planning.
+                    </p>
+                </div>
+                
+                <div class="methodology-card fade-up" data-delay="300">
+                    <div class="methodology-number">3</div>
+                    <h3 class="text-xl font-bold mb-4 mt-4">Deliver</h3>
+                    <p class="text-gray-600">
+                        We work alongside your team to implement the optimization roadmap, providing both advisory guidance and hands-on execution support. This ensures changes are properly executed and embedded within your organization.
+                    </p>
+                </div>
+                
+                <div class="methodology-card fade-up" data-delay="400">
+                    <div class="methodology-number">4</div>
+                    <h3 class="text-xl font-bold mb-4 mt-4">Develop</h3>
+                    <p class="text-gray-600">
+                        We build the capabilities within your team to maintain and further develop the optimized systems, ensuring sustainable results beyond our engagement. This includes leadership coaching and capability transfer.
+                    </p>
+                </div>
+                
+                <div class="methodology-card fade-up" data-delay="500">
+                    <div class="methodology-number">5</div>
+                    <h3 class="text-xl font-bold mb-4 mt-4">Data-Driven</h3>
+                    <p class="text-gray-600">
+                        We implement measurement systems and custom analytics dashboards that provide real-time visibility into your Value Generation Engine's performance, enabling continuous optimization.
+                    </p>
+                </div>
+                
+                <div class="methodology-card fade-up" data-delay="600">
+                    <div class="methodology-number">6</div>
+                    <h3 class="text-xl font-bold mb-4 mt-4">Differentiate</h3>
+                    <p class="text-gray-600">
+                        We help crystallize your unique market position and competitive advantages, then architect systems that consistently deliver on your differentiation promises.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section class="section">
+        <div class="container mx-auto px-4">
+            <div class="mb-16 text-center fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Impact & Outcomes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our clients experience tangible, measurable transformation across their businesses.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div class="fade-up" data-delay="100">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold mb-6">SaaS Scale-Up</h3>
+                        <p class="text-gray-600 mb-6">
+                            A B2B SaaS company struggling with growth plateau and operational inefficiencies as they approached $5M ARR.
+                        </p>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-semibold mb-3">What We Did:</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Redesigned core operational processes</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Refined market positioning and ICP</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Implemented AI-driven lead qualification system</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Created custom analytics dashboard</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3">Results:</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <span class="text-2xl font-bold text-primary" style="color: var(--primary)">78%</span>
+                                    <p class="text-sm text-gray-600">Increase in sales conversion rate</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <span class="text-2xl font-bold text-primary" style="color: var(--primary)">42%</span>
+                                    <p class="text-sm text-gray-600">Reduction in customer acquisition cost</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <span class="text-2xl font-bold text-primary" style="color: var(--primary)">2.4x</span>
+                                    <p class="text-sm text-gray-600">Revenue growth in 12 months</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <span class="text-2xl font-bold text-primary" style="color: var(--primary)">$8M</span>
+                                    <p class="text-sm text-gray-600">Series A funding secured</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-up" data-delay="200">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold mb-6">Professional Services Firm</h3>
+                        <p class="text-gray-600 mb-6">
+                            An established accounting firm seeking to transition from compliance services to higher-value advisory and facing internal efficiency challenges.
+                        </p>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-semibold mb-3">What We Did:</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Restructured service delivery model</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Implemented value-based pricing framework</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Developed advisory service methodology</li>
+                                <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Created capacity optimization system</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3">Results:</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <span class="text-2xl font-bold text-primary" style="color: var(--primary)">65%</span>
+                                    <p class="text-sm text-gray-600">Increase in average client value</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <span class="text-2xl font-bold text-primary" style="color: var(--primary)">35%</span>
+                                    <p class="text-sm text-gray-600">Improvement in profit margin</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <span class="text-2xl font-bold text-primary" style="color: var(--primary)">3x</span>
+                                    <p class="text-sm text-gray-600">Growth in advisory revenue</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <span class="text-2xl font-bold text-primary" style="color: var(--primary)">22%</span>
+                                    <p class="text-sm text-gray-600">Reduction in delivery time</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Advanced Features Section -->
+    <section class="section bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="mb-16 text-center fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Advanced Capabilities</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Our approach integrates cutting-edge technology with proven strategic frameworks.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="fade-up" data-delay="100">
+                    <h3 class="text-2xl font-bold mb-6">AI-Driven Process Optimization</h3>
+                    <p class="text-gray-600 mb-6">
+                        We leverage advanced AI technologies to identify process inefficiencies, simulate improvement scenarios, and implement intelligent automation where it creates the most value. Our approach focuses on augmenting human capabilities rather than replacing them.
+                    </p>
+                    
+                    <div class="ai-visual">
+                        <div class="ai-circle">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="ai-pulse ai-pulse-1"></div>
+                        <div class="ai-pulse ai-pulse-2"></div>
+                        <div class="ai-pulse ai-pulse-3"></div>
+                        
+                        <div class="ai-connection ai-connection-1"></div>
+                        <div class="ai-connection ai-connection-2"></div>
+                        <div class="ai-connection ai-connection-3"></div>
+                        
+                        <div class="ai-node ai-node-1">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="ai-node ai-node-2">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="ai-node ai-node-3">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-3">Key Applications:</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Predictive workflow optimization</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Intelligent resource allocation</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Decision support systems</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Business process simulation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="fade-up" data-delay="200">
+                    <h3 class="text-2xl font-bold mb-6">Custom Analytics Dashboards</h3>
+                    <p class="text-gray-600 mb-6">
+                        We design and implement bespoke analytics systems that provide real-time visibility into your Value Generation Engine's performance. These dashboards focus on actionable insights rather than vanity metrics, enabling data-driven decision making at all levels.
+                    </p>
+                    
+                    <div class="dashboard-visual">
+                        <div class="chart-bar chart-bar-1"></div>
+                        <div class="chart-bar chart-bar-2"></div>
+                        <div class="chart-bar chart-bar-3"></div>
+                        <div class="chart-bar chart-bar-4"></div>
+                        <div class="chart-bar chart-bar-5"></div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-semibold mb-3">Dashboard Features:</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Executive KPI visualizations</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Operational performance metrics</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Predictive trend analysis</li>
+                            <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Automated insight generation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tools Section -->
+    <section id="tools" class="section">
+        <div class="container mx-auto px-4">
+            <div class="mb-16 text-center fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tools & Resources</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Access premium tools to assess and strengthen your business.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <div id="diagnostic" class="fade-up" data-delay="100">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold mb-6">Value Engine Diagnostic</h3>
+                        <p class="text-gray-600 mb-6">
+                            Identify your business's key growth bottlenecks with our comprehensive assessment tool.
+                        </p>
+                        
+                        <div class="diagnostic-container">
+                            <div class="diagnostic-progress mb-8">
+                                <div class="flex justify-between text-sm text-gray-600 mb-2">
+                                    <span>Progress</span>
+                                    <span class="diagnostic-step">1/8</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 12.5%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="diagnostic-questions">
+                                <div class="diagnostic-question active" data-question="1">
+                                    <h4 class="font-semibold mb-4">What stage is your business currently in?</h4>
+                                    <div class="space-y-3">
+                                        <label class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                            <input type="radio" name="stage" class="mr-2"> Startup (0-1M revenue)
+                                        </label>
+                                        <label class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                            <input type="radio" name="stage" class="mr-2"> Early Growth (1-5M revenue)
+                                        </label>
+                                        <label class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                            <input type="radio" name="stage" class="mr-2"> Scaling (5-20M revenue)
+                                        </label>
+                                        <label class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                            <input type="radio" name="stage" class="mr-2"> Established (20M+ revenue)
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="diagnostic-question" data-question="2">
+                                    <h4 class="font-semibold mb-4">What is your biggest operational challenge currently?</h4>
+                                    <div class="space-y-3">
+                                        <label class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                            <input type="radio" name="challenge" class="mr-2"> Scaling processes while maintaining quality
+                                        </label>
+                                        <label class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                            <input type="radio" name="challenge" class="mr-2"> Systemizing knowledge currently held by key people
+                                        </label>
+                                        <label class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                            <input type="radio" name="challenge" class="mr-2"> Improving efficiency and reducing costs
+                                        </label>
+                                        <label class="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                            <input type="radio" name="challenge" class="mr-2"> Maintaining consistency across multiple locations/teams
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <!-- Additional questions would be here -->
+                            </div>
+                            
+                            <div class="flex justify-between mt-6">
+                                <button class="diagnostic-prev btn-secondary opacity-50 cursor-not-allowed" disabled>Previous</button>
+                                <button class="diagnostic-next btn-primary">Next Question</button>
+                            </div>
+                            
+                            <p class="text-sm text-gray-500 mt-6">
+                                The full assessment contains 8 questions and takes approximately 3-5 minutes to complete. You'll receive a detailed growth score and actionable recommendations.
+                            </p>
+                            
+                            <div class="text-center mt-8">
+                                <a href="/full-diagnostic" class="text-primary font-medium hover:underline">
+                                    <i class="fas fa-external-link-alt mr-1"></i>
+                                    Take the complete assessment for detailed results
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-up" data-delay="200">
+                    <div class="card p-8">
+                        <h3 class="text-2xl font-bold mb-6">Premium Template Library</h3>
+                        <p class="text-gray-600 mb-6">
+                            Access our curated collection of best-in-class frameworks, templates, and tools for business optimization.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div class="template-card p-6">
+                                <div class="template-icon">
+                                    <i class="fas fa-sitemap"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Strategic Alignment Framework</h4>
+                                <p class="text-sm text-gray-600 mb-4">
+                                    Ensure all business functions support your strategic objectives.
+                                </p>
+                                <a href="/templates/strategic-alignment" class="text-primary text-sm font-medium hover:underline">View Template</a>
+                            </div>
+                            
+                            <div class="template-card p-6">
+                                <div class="template-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Value Engine Diagnostic</h4>
+                                <p class="text-sm text-gray-600 mb-4">
+                                    Comprehensive assessment tool for identifying growth bottlenecks.
+                                </p>
+                                <a href="/templates/vge-diagnostic" class="text-primary text-sm font-medium hover:underline">View Template</a>
+                            </div>
+                            
+                            <div class="template-card p-6">
+                                <div class="template-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Process Optimization Toolkit</h4>
+                                <p class="text-sm text-gray-600 mb-4">
+                                    Map, analyze, and optimize your core business processes.
+                                </p>
+                                <a href="/templates/process-optimization" class="text-primary text-sm font-medium hover:underline">View Template</a>
+                            </div>
+                            
+                            <div class="template-card p-6">
+                                <div class="template-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <h4 class="font-semibold mb-2">Market Positioning Canvas</h4>
+                                <p class="text-sm text-gray-600 mb-4">
+                                    Clarify your unique value proposition and market position.
+                                </p>
+                                <a href="/templates/positioning-canvas" class="text-primary text-sm font-medium hover:underline">View Template</a>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="/template-library" class="btn-secondary">
+                                Browse Full Template Library
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-up" data-delay="100">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Build Your Growth Engine</h2>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Schedule a strategy call to explore how we can unlock sustainable growth for your business.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 text-primary pt-1" style="color: var(--secondary)">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">No Obligation Consultation</h3>
+                                <p class="text-gray-400">
+                                    A focused conversation about your growth challenges and opportunities.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 text-primary pt-1" style="color: var(--secondary)">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Custom Assessment</h3>
+                                <p class="text-gray-400">
+                                    We'll identify key optimization opportunities specific to your business.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-2xl mr-4 text-primary pt-1" style="color: var(--secondary)">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Partnership Approach</h3>
+                                <p class="text-gray-400">
+                                    We focus on long-term value creation, not quick fixes or endless billing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-up" data-delay="200">
+                    <form class="bg-white p-8 rounded-xl shadow-xl text-gray-800">
+                        <h3 class="text-2xl font-bold mb-6">Schedule a Strategy Call</h3>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="name">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="Your name">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="email">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="your@email.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="company">Company</label>
+                            <input type="text" id="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="Your company">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2" for="message">What's your biggest business challenge?</label>
+                            <textarea id="message" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" rows="4" placeholder="Tell us briefly about your situation..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-primary py-3 text-center">
+                            Schedule Your Strategy Call
+                        </button>
+                        
+                        <p class="text-sm text-gray-500 mt-4 text-center">
+                            We typically respond within 24 business hours.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="flex items-center mb-4">
+                        <span class="text-2xl font-bold">THE<span class="ml-2 text-primary" style="color: var(--secondary)">VALUE ENGINE</span></span>
+                    </a>
+                    <p class="text-gray-400 mb-6">
+                        We identify, align, and optimize Value Generation Engines within businesses to unlock sustainable growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-medium"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#what-we-do" class="text-gray-400 hover:text-white transition-colors">What We Do</a></li>
+                        <li><a href="#who-we-help" class="text-gray-400 hover:text-white transition-colors">Who We Help</a></li>
+                        <li><a href="#methodology" class="text-gray-400 hover:text-white transition-colors">Methodology</a></li>
+                        <li><a href="#tools" class="text-gray-400 hover:text-white transition-colors">Tools & Resources</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/template-library" class="text-gray-400 hover:text-white transition-colors">Template Library</a></li>
+                        <li><a href="/case-studies" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="/insights" class="text-gray-400 hover:text-white transition-colors">Insights</a></li>
+                        <li><a href="/diagnostic" class="text-gray-400 hover:text-white transition-colors">Growth Diagnostic</a></li>
+                        <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 The Value Engine. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Accordion functionality
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('.accordion-icon i');
+                    
+                    content.classList.toggle('active');
+                    
+                    if (content.classList.contains('active')) {
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                    } else {
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                    }
+                });
+            });
+            
+            // Diagnostic functionality
+            const diagnosticNext = document.querySelector('.diagnostic-next');
+            const diagnosticPrev = document.querySelector('.diagnostic-prev');
+            const questions = document.querySelectorAll('.diagnostic-question');
+            const progressFill = document.querySelector('.progress-fill');
+            const stepText = document.querySelector('.diagnostic-step');
+            
+            let currentQuestion = 1;
+            const totalQuestions = questions.length;
+            
+            if (diagnosticNext) {
+                diagnosticNext.addEventListener('click', () => {
+                    if (currentQuestion < totalQuestions) {
+                        // Hide current question
+                        document.querySelector(`.diagnostic-question[data-question="${currentQuestion}"]`).classList.remove('active');
+                        
+                        // Show next question
+                        currentQuestion++;
+                        document.querySelector(`.diagnostic-question[data-question="${currentQuestion}"]`).classList.add('active');
+                        
+                        // Update progress
+                        const progress = (currentQuestion / totalQuestions) * 100;
+                        progressFill.style.width = `${progress}%`;
+                        stepText.textContent = `${currentQuestion}/${totalQuestions}`;
+                        
+                        // Enable prev button
+                        diagnosticPrev.classList.remove('opacity-50', 'cursor-not-allowed');
+                        diagnosticPrev.disabled = false;
+                        
+                        // Disable next button if on last question
+                        if (currentQuestion === totalQuestions) {
+                            diagnosticNext.textContent = 'Submit';
+                        }
+                    } else {
+                        // If on last question, handle submission
+                        alert('Thank you for completing the mini-assessment! For detailed results, please take the full diagnostic.');
+                    }
+                });
+            }
+            
+            if (diagnosticPrev) {
+                diagnosticPrev.addEventListener('click', () => {
+                    if (currentQuestion > 1) {
+                        // Hide current question
+                        document.querySelector(`.diagnostic-question[data-question="${currentQuestion}"]`).classList.remove('active');
+                        
+                        // Show previous question
+                        currentQuestion--;
+                        document.querySelector(`.diagnostic-question[data-question="${currentQuestion}"]`).classList.add('active');
+                        
+                        // Update progress
+                        const progress = (currentQuestion / totalQuestions) * 100;
+                        progressFill.style.width = `${progress}%`;
+                        stepText.textContent = `${currentQuestion}/${totalQuestions}`;
+                        
+                        // Disable prev button if on first question
+                        if (currentQuestion === 1) {
+                            diagnosticPrev.classList.add('opacity-50', 'cursor-not-allowed');
+                            diagnosticPrev.disabled = true;
+                        }
+                        
+                        // Change next button text back if not on last question
+                        if (currentQuestion < totalQuestions) {
+                            diagnosticNext.textContent = 'Next Question';
+                        }
+                    }
+                });
+            }
+            
+            // Mobile menu functionality
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            
+            if (mobileNavToggle) {
+                mobileNavToggle.addEventListener('click', () => {
+                    mobileMenu.classList.add('open');
+                });
+            }
+            
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            }
+            
+            // Mobile menu link click handling
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                });
+            });
+            
+            // Scroll animations for dashboard and AI visuals
+            const handleIntersection = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            };
+            
+            const observer = new IntersectionObserver(handleIntersection, {
+                root: null,
+                threshold: 0.3
+            });
+            
+            const dashboardVisual = document.querySelector('.dashboard-visual');
+            const aiVisual = document.querySelector('.ai-visual');
+            
+            if (dashboardVisual) observer.observe(dashboardVisual);
+            if (aiVisual) observer.observe(aiVisual);
+            
+            // Scroll animations for fade-up elements
+            const fadeElements = document.querySelectorAll('.fade-up');
+            fadeElements.forEach(el => {
+                const observer = new IntersectionObserver(
+                    ([entry]) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('active');
+                            }, el.dataset.delay || 0);
+                        }
+                    },
+                    { threshold: 0.1 }
+                );
+                
+                observer.observe(el);
+            });
+            
+            // Header scroll behavior
+            const header = document.querySelector('header');
+            let lastScrollY = window.scrollY;
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('shadow-md');
+                    header.classList.add('bg-white/95');
+                    header.classList.add('backdrop-blur-sm');
+                } else {
+                    header.classList.remove('shadow-md');
+                    header.classList.remove('bg-white/95');
+                    header.classList.remove('backdrop-blur-sm');
+                }
+                
+                lastScrollY = window.scrollY;
+            });
+        });
+    </script>
+</body>
+</html>
